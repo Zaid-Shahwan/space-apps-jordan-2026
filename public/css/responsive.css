@@ -1,0 +1,294 @@
+/* ==========================================================================
+   responsive.css
+   Breakpoints (max-width): 1100, 900, 700, 600, 520, 380.
+   Designed and checked for 1440, 1280, 1024, 768, 480, 375 and 320px.
+   ========================================================================== */
+
+/* ---------- Small desktop / large tablet -------------------------------- */
+@media (max-width: 1100px) {
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.25rem 2rem;
+  }
+
+  .stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ---------- Tablet: navigation collapses, layouts stack ------------------ */
+@media (max-width: 899px) {
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  /* Mobile menu panel */
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    padding: 0.75rem var(--gutter) 1.5rem;
+    border-bottom: 1px solid var(--line);
+    background: rgba(5, 8, 22, 0.985);
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 24px 40px -24px rgba(0, 0, 0, 0.9);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), visibility 0s linear 0.25s;
+  }
+
+  .is-menu-open .site-nav {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition-delay: 0s;
+  }
+
+  .site-nav__list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .site-nav__link {
+    padding: 0.95rem 0.25rem;
+    border-bottom: 1px solid var(--line);
+    font-size: 1.05rem;
+  }
+
+  .site-nav__link::after {
+    display: none;
+  }
+
+  .site-nav__link[aria-current="page"] {
+    color: var(--cyan);
+  }
+
+  .site-nav__cta {
+    width: 100%;
+    min-height: 52px;
+  }
+
+  .hero__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero__visual {
+    width: 100%;
+    max-width: 30rem;
+    margin-inline: auto;
+  }
+
+  .grid-3,
+  .info-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .notes__list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---------- Large phone / small tablet ---------------------------------- */
+@media (max-width: 700px) {
+  .space-bg::before { opacity: 0.26; width: clamp(200px, 55vw, 300px); }
+  .space-bg::after { opacity: 0.22; width: clamp(200px, 55vw, 300px); }
+  .space-bg__glow { display: none; }
+
+  .process,
+  .grid-2,
+  .location-grid,
+  .podium {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .field-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .choice-row,
+  .choice-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .footer__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .footer__top {
+    margin-left: 0;
+  }
+
+  /* The step buttons stay reachable while scrolling a long step. */
+  .form-controls {
+    position: sticky;
+    bottom: 0;
+    z-index: 4;
+    margin-inline: calc(-1 * clamp(1rem, 3vw, 2rem));
+    margin-bottom: 0;
+    padding: 0.85rem clamp(1rem, 3vw, 2rem) calc(0.85rem + env(safe-area-inset-bottom, 0px));
+    border-top: 1px solid var(--line-strong);
+    background: rgba(8, 13, 31, 0.975);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+
+  .facts div {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  /* Tracker becomes a compact dot row; the caption above names the step. */
+  .tracker__label {
+    display: none;
+  }
+
+  .tracker__dot {
+    width: 36px;
+    height: 36px;
+    font-size: 0.72rem;
+  }
+
+  .tracker__steps {
+    gap: 0.25rem;
+  }
+
+  .tracker__head {
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .flow,
+  .stat-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .review__row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .review__head {
+    align-items: flex-start;
+  }
+}
+
+/* ---------- Phone -------------------------------------------------------- */
+@media (max-width: 520px) {
+  .brand__text span {
+    display: none;
+  }
+
+  .hero__actions .btn,
+  .success__actions .btn,
+  .cta-band .btn {
+    width: 100%;
+  }
+
+  .launch-clock {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .launch-clock__label {
+    max-width: none;
+  }
+
+  .callout {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .note {
+    padding: 0.85rem 0.5rem;
+  }
+
+  .form-controls .btn {
+    min-width: 0;
+    flex: 1;
+  }
+
+  #btn-next {
+    flex: 2;
+  }
+
+  .dialog__actions .btn {
+    flex: 1 1 100%;
+  }
+
+  .person {
+    align-items: flex-start;
+  }
+
+  .footer__list--two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ---------- Small phone (320-380px) -------------------------------------- */
+@media (max-width: 380px) {
+  :root {
+    --gutter: 0.9rem;
+  }
+
+  .app {
+    padding: 0.85rem;
+    border-radius: 18px;
+  }
+
+  .form-controls {
+    margin-inline: -0.85rem;
+    padding-inline: 0.85rem;
+  }
+
+  .notes {
+    padding: 1rem;
+    border-radius: 18px;
+  }
+
+  .pill {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+  }
+
+  .hero__place {
+    font-size: 0.82rem;
+  }
+
+  .hero__place::after {
+    display: none;
+  }
+
+  .success__ref dd {
+    font-size: 1.1rem;
+  }
+
+  .review__section {
+    padding: 0.9rem;
+  }
+
+  .footer__list--two {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .orbit-label {
+    font-size: 0.68rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .orbit-label strong {
+    font-size: 0.78rem;
+  }
+}

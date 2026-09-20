@@ -1,0 +1,254 @@
+/* ==========================================================================
+   admin.css
+   Styles for admin.html only. It adds nothing to the design system: it reuses
+   the tokens, cards, fields, buttons and stat blocks from style.css, so the
+   admin pages look like the rest of the site.
+   ========================================================================== */
+
+/* ---------- Sign in ------------------------------------------------------ */
+.admin-login {
+  max-width: 26rem;
+  margin-inline: auto;
+  padding: 1.75rem;
+}
+
+.admin-login .card__title {
+  margin-bottom: 1.25rem;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.admin-login .alert {
+  margin: 0 0 1.25rem;
+}
+
+.admin-login .btn {
+  width: 100%;
+}
+
+/* ---------- Toolbar ------------------------------------------------------ */
+.admin-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.admin-toolbar__search {
+  flex: 1 1 22rem;
+  margin: 0;
+}
+
+.admin-toolbar__actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.admin-count {
+  margin: 1.75rem 0 1rem;
+  color: var(--text-muted);
+}
+
+#dashboard-alert {
+  margin: 0 0 1.25rem;
+}
+
+/* ---------- Team cards --------------------------------------------------- */
+.team-list {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.team-card {
+  padding: clamp(1.1rem, 3vw, 1.75rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  transition: border-color 0.3s;
+}
+
+.team-card:hover {
+  border-color: var(--line-strong);
+}
+
+.team-card__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.team-card__id {
+  color: var(--cyan-soft);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.team-card__name {
+  margin-top: 0.3rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: rgba(47, 225, 255, 0.08);
+  color: var(--cyan-soft);
+  font-size: 0.82rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.badge--online {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+}
+
+.team-card__meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 1rem 1.5rem;
+  margin: 1.1rem 0;
+}
+
+.team-card__meta dt,
+.team-card__row dt {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.team-card__meta dd {
+  font-weight: 600;
+}
+
+.team-card__cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem 2rem;
+}
+
+.team-card__section h4 {
+  margin-bottom: 0.6rem;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.team-card__section + .team-card__section,
+.team-card__cols + .team-card__section {
+  margin-top: 1.25rem;
+}
+
+.team-card__row {
+  display: grid;
+  grid-template-columns: minmax(0, 6.5rem) minmax(0, 1fr);
+  gap: 0.25rem 0.75rem;
+  padding: 0.35rem 0;
+}
+
+.team-card__row dd {
+  overflow-wrap: anywhere;
+}
+
+.team-card__members {
+  display: grid;
+  gap: 0.5rem;
+  list-style: none;
+  counter-reset: member;
+}
+
+.team-card__members li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.02);
+  counter-increment: member;
+  overflow-wrap: anywhere;
+}
+
+.team-card__members li::before {
+  content: counter(member) ".";
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.team-card__members strong {
+  font-weight: 700;
+}
+
+.role-tag {
+  padding: 0.1rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(47, 225, 255, 0.12);
+  color: var(--cyan-soft);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.team-card__members small {
+  flex-basis: 100%;
+  padding-left: 1.6rem;
+  color: var(--text-muted);
+}
+
+.team-card a {
+  color: var(--cyan-soft);
+}
+
+.admin-empty {
+  padding: 2rem;
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-lg);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* Keep the four totals compact on phones (two per row instead of a tall single column). */
+@media (max-width: 600px) {
+  .admin-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .admin-stats .stat {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .team-card__cols {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .admin-toolbar__actions {
+    width: 100%;
+  }
+
+  .admin-toolbar__actions .btn {
+    flex: 1;
+  }
+
+  .team-card__row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+}

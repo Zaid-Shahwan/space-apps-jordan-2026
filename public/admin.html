@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Team registrations | NASA Space Apps Madaba 2026</title>
+  <meta name="description" content="Organizer dashboard for NASA Space Apps Madaba 2026.">
+  <!-- Not linked anywhere on the site and hidden from search engines. Access is enforced by the server. -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#050816">
+
+  <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+  <link rel="apple-touch-icon" href="assets/icons/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body id="top" data-page="admin">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="space-bg" aria-hidden="true">
+    <span class="space-bg__stars"></span>
+    <span class="space-bg__stars space-bg__stars--far"></span>
+    <span class="space-bg__glow"></span>
+    <span class="space-bg__grid"></span>
+  </div>
+
+  <header class="site-header" data-site-header></header>
+
+  <main id="main-content">
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <p class="pill">Organizers only</p>
+        <h1 class="page-title" id="page-title">Team registrations</h1>
+        <p class="page-lead" id="admin-lead">Sign in to see the registered teams.</p>
+      </div>
+    </section>
+
+    <!-- ===================================================== SIGN IN -->
+    <section class="section section--tight" id="admin-login" aria-labelledby="login-title">
+      <div class="container">
+        <div class="card admin-login">
+          <h2 class="card__title" id="login-title">Admin sign in</h2>
+          <form id="login-form" novalidate>
+            <div class="field">
+              <label class="field__label" for="login-email">Email</label>
+              <input class="input" id="login-email" name="email" type="email" autocomplete="username" inputmode="email" required>
+            </div>
+            <div class="field">
+              <label class="field__label" for="login-password">Password</label>
+              <input class="input" id="login-password" name="password" type="password" autocomplete="current-password" required>
+            </div>
+            <div class="alert" id="login-alert" role="alert" tabindex="-1" hidden></div>
+            <button class="btn btn--primary" type="submit" id="login-submit">Sign in</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================== DASHBOARD -->
+    <section class="section section--tight" id="admin-dashboard" aria-labelledby="page-title" hidden>
+      <div class="container">
+        <div class="admin-toolbar">
+          <div class="field admin-toolbar__search">
+            <label class="sr-only" for="team-search">Search teams</label>
+            <input class="input" id="team-search" type="search" autocomplete="off" placeholder="Search by team name, member name, email or team ID">
+          </div>
+          <div class="admin-toolbar__actions">
+            <button class="btn btn--ghost btn--sm" type="button" id="btn-refresh"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-refresh"></use></svg> Refresh</button>
+            <button class="btn btn--ghost btn--sm" type="button" id="btn-logout">Logout</button>
+          </div>
+        </div>
+
+        <div class="stat-grid admin-stats">
+          <div class="stat"><span class="stat__num" id="stat-teams">0</span><span class="stat__label">Registered teams</span></div>
+          <div class="stat"><span class="stat__num" id="stat-participants">0</span><span class="stat__label">Participants</span></div>
+          <div class="stat"><span class="stat__num" id="stat-inperson">0</span><span class="stat__label">In-person teams (Madaba)</span></div>
+          <div class="stat"><span class="stat__num" id="stat-online">0</span><span class="stat__label">Online teams</span></div>
+        </div>
+
+        <p class="admin-count" id="result-count" role="status" aria-live="polite"></p>
+        <div class="alert" id="dashboard-alert" role="alert" tabindex="-1" hidden></div>
+        <div class="team-list" id="team-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-site-footer></footer>
+
+  <script src="js/config.js" defer></script>
+  <script src="js/layout.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/admin.js" defer></script>
+</body>
+</html>
