@@ -48,7 +48,6 @@
       challenges2026: "https://www.spaceappschallenge.org/2026/",
       privacy: "https://www.nasaspaceappschallenge-amman-aqaba.com/privacy/",
       terms: "https://www.nasaspaceappschallenge-amman-aqaba.com/terms/",
-      gallery2025: "https://www.nasaspaceappschallenge-amman-aqaba.com/2025/#gallery",
     },
 
     /* The six registration steps, in order. */

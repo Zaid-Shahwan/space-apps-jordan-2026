@@ -80,7 +80,6 @@
     { id: "home", label: "Home", href: "index.html" },
     { id: "event", label: "The Event", href: "event.html" },
     { id: "about", label: "About", href: "about.html" },
-    { id: "archive", label: "2025", href: "2025.html" },
     { id: "help", label: "Help", href: "help.html" },
   ];
 
@@ -126,8 +125,6 @@
     ["Locations", "event.html#locations"],
     ["Challenges", "event.html#challenges"],
     ["Registration", "register.html"],
-    ["2025 Experience", "2025.html"],
-    ["Gallery", "2025.html#gallery"],
     ["FAQ", "help.html#faq"],
     ["Contact", "help.html#contact"],
   ];
