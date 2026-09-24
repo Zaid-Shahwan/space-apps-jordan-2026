@@ -1,21 +1,10 @@
-/* ==========================================================================
-   layout.js
-   Renders the pieces shared by every page: the SVG icon sprite, the site
-   header/navigation and the footer. Pages only need to include:
-     <header class="site-header" data-site-header></header>
-     <footer class="site-footer" data-site-footer></footer>
-   and set <body data-page="..."> so the active nav link can be marked.
-   ========================================================================== */
+
 (function () {
   "use strict";
 
   const SA = (window.SA = window.SA || {});
   const cfg = SA.config;
 
-  /* ---------------------------------------------------------------------
-     Icons (24x24, stroke based). Rendered through an inline sprite so they
-     work from file:// as well as from a local server.
-     --------------------------------------------------------------------- */
   const ICONS = {
     check: '<path d="M20 6 9 17l-5-5"/>',
     "arrow-right": '<path d="M5 12h14M13 6l6 6-6 6"/>',
@@ -52,7 +41,6 @@
     spark: '<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18"/>',
   };
 
-  /** Returns markup for an icon: <svg class="icon"><use href="#i-name"/></svg> */
   SA.icon = function (name, extraClass) {
     const cls = "icon" + (extraClass ? " " + extraClass : "");
     return (
@@ -73,9 +61,6 @@
     document.body.insertAdjacentHTML("afterbegin", sprite);
   }
 
-  /* ---------------------------------------------------------------------
-     Navigation + header
-     --------------------------------------------------------------------- */
   const NAV_ITEMS = [
     { id: "home", label: "Home", href: "index.html" },
     { id: "event", label: "The Event", href: "event.html" },
@@ -98,7 +83,7 @@
     host.innerHTML =
       '<div class="site-header__inner container">' +
       '<a class="brand" href="index.html" aria-label="Space Apps Jordan 2026, home">' +
-      '<img class="brand__mark" src="assets/icons/logo-mark.svg" alt="" width="36" height="36">' +
+      '<img class="brand__mark" src="assets/icons/Space_Apps_logo_IRBID.jpg" alt="" width="36" height="36">' +
       '<span class="brand__text"><strong>Space Apps Jordan</strong><span>Madaba, Jordan 2026</span></span>' +
       "</a>" +
       '<nav class="site-nav" id="site-nav" aria-label="Primary">' +
@@ -115,9 +100,6 @@
       "</div>";
   }
 
-  /* ---------------------------------------------------------------------
-     Footer
-     --------------------------------------------------------------------- */
   const FOOTER_LINKS = [
     ["Home", "index.html"],
     ["About", "about.html"],
@@ -149,7 +131,7 @@
       '<div class="footer__grid">' +
       '<div class="footer__brand">' +
       '<a class="brand" href="index.html" aria-label="Space Apps Jordan 2026, home">' +
-      '<img class="brand__mark" src="assets/icons/logo-mark.svg" alt="" width="36" height="36" loading="lazy">' +
+      '<img class="brand__mark" src="assets/icons/Space_Apps_logo_IRBID.jpg" alt="" width="36" height="36" loading="lazy">' +
       '<span class="brand__text"><strong>Space Apps Jordan</strong><span>Jordan site</span></span></a>' +
       '<p class="footer__title">NASA Space Apps Challenge<br>Madaba, Jordan 2026</p>' +
       '<p class="footer__org"><span>Local organizer</span>Organized by <strong>MENA ORG</strong></p>' +
