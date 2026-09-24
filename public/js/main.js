@@ -125,8 +125,8 @@
         const label = root.querySelector("[data-cd-label]");
         const sr = root.querySelector("[data-cd-sr]");
         if (state === "before") {
-          if (label) label.textContent = "Until the event begins on 13 November";
-          if (sr) sr.textContent = days + " days, " + hours + " hours and " + minutes + " minutes until the event begins on 13 November 2026.";
+          if (label) label.textContent = "Until the event begins on 14 November";
+          if (sr) sr.textContent = days + " days, " + hours + " hours and " + minutes + " minutes until the event begins on 14 November 2026.";
         } else if (state === "live") {
           if (label) label.textContent = "The event is under way";
           if (sr) sr.textContent = "The event is under way.";
