@@ -35,9 +35,9 @@
   <main id="main-content">
     <section class="page-hero" aria-labelledby="page-title">
       <div class="container">
-        <p class="pill">Organizers only</p>
-        <h1 class="page-title" id="page-title">Team registrations</h1>
-        <p class="page-lead" id="admin-lead">Sign in to see the registered teams.</p>
+        <p class="pill" data-i18n="admin_badge">Organizers only</p>
+        <h1 class="page-title" id="page-title" data-i18n="admin_title">Team registrations</h1>
+        <p class="page-lead" id="admin-lead" data-i18n="admin_lead">Sign in to see the registered teams.</p>
       </div>
     </section>
 
@@ -45,18 +45,18 @@
     <section class="section section--tight" id="admin-login" aria-labelledby="login-title">
       <div class="container">
         <div class="card admin-login">
-          <h2 class="card__title" id="login-title">Admin sign in</h2>
+          <h2 class="card__title" id="login-title" data-i18n="admin_sign_in">Admin sign in</h2>
           <form id="login-form" novalidate>
             <div class="field">
-              <label class="field__label" for="login-email">Email</label>
+              <label class="field__label" for="login-email" data-i18n="admin_email">Email</label>
               <input class="input" id="login-email" name="email" type="email" autocomplete="username" inputmode="email" required>
             </div>
             <div class="field">
-              <label class="field__label" for="login-password">Password</label>
+              <label class="field__label" for="login-password" data-i18n="admin_password">Password</label>
               <input class="input" id="login-password" name="password" type="password" autocomplete="current-password" required>
             </div>
             <div class="alert" id="login-alert" role="alert" tabindex="-1" hidden></div>
-            <button class="btn btn--primary" type="submit" id="login-submit">Sign in</button>
+            <button class="btn btn--primary" type="submit" id="login-submit" data-i18n="admin_sign_in_button">Sign in</button>
           </form>
         </div>
       </div>
@@ -71,16 +71,16 @@
             <input class="input" id="team-search" type="search" autocomplete="off" placeholder="Search by team name, member name, email or team ID">
           </div>
           <div class="admin-toolbar__actions">
-            <button class="btn btn--ghost btn--sm" type="button" id="btn-refresh"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-refresh"></use></svg> Refresh</button>
-            <button class="btn btn--ghost btn--sm" type="button" id="btn-logout">Logout</button>
+            <button class="btn btn--ghost btn--sm" type="button" id="btn-refresh"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-refresh"></use></svg> <span data-i18n="admin_refresh">Refresh</span></button>
+            <button class="btn btn--ghost btn--sm" type="button" id="btn-logout" data-i18n="admin_logout">Logout</button>
           </div>
         </div>
 
         <div class="stat-grid admin-stats">
-          <div class="stat"><span class="stat__num" id="stat-teams">0</span><span class="stat__label">Registered teams</span></div>
-          <div class="stat"><span class="stat__num" id="stat-participants">0</span><span class="stat__label">Participants</span></div>
-          <div class="stat"><span class="stat__num" id="stat-inperson">0</span><span class="stat__label">In-person teams (IRBID)</span></div>
-          <div class="stat"><span class="stat__num" id="stat-online">0</span><span class="stat__label">Online teams</span></div>
+          <div class="stat"><span class="stat__num" id="stat-teams">0</span><span class="stat__label" data-i18n="admin_registered_teams">Registered teams</span></div>
+          <div class="stat"><span class="stat__num" id="stat-participants">0</span><span class="stat__label" data-i18n="admin_participants">Participants</span></div>
+          <div class="stat"><span class="stat__num" id="stat-inperson">0</span><span class="stat__label" data-i18n="admin_in_person_teams">In-person teams (IRBID)</span></div>
+          <div class="stat"><span class="stat__num" id="stat-online">0</span><span class="stat__label" data-i18n="admin_online_teams">Online teams</span></div>
         </div>
 
         <p class="admin-count" id="result-count" role="status" aria-live="polite"></p>

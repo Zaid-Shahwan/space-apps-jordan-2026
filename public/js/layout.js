@@ -75,7 +75,7 @@
     const page = document.body.getAttribute("data-page");
     const links = NAV_ITEMS.map(function (item) {
       const current = item.id === page ? ' aria-current="page"' : "";
-      return '<li><a class="site-nav__link" href="' + item.href + '"' + current + ">" + item.label + "</a></li>";
+      return '<li><a class="site-nav__link" href="' + item.href + '"' + current + ' data-i18n="nav_' + item.id + '">' + item.label + "</a></li>";
     }).join("");
 
     const registerCurrent = page === "register" ? ' aria-current="page"' : "";
@@ -90,9 +90,14 @@
       '<ul class="site-nav__list">' +
       links +
       "</ul>" +
+      '<div class="lang-switch" aria-label="Language selector">' +
+      '<button class="lang-switch__trigger" type="button" aria-expanded="false" aria-haspopup="true"><span class="lang-switch__label">EN</span></button>' +
+      '<div class="lang-switch__menu" role="menu" aria-label="Choose language">' +
+      '<button class="lang-switch__option is-selected" type="button" data-lang="en" role="menuitemradio" aria-checked="true">EN — English</button>' +
+      '<button class="lang-switch__option" type="button" data-lang="ar" role="menuitemradio" aria-checked="false">AR — العربية</button>' +
+      '</div></div>' +
       '<a class="btn btn--primary btn--sm site-nav__cta" href="register.html"' +
-      registerCurrent +
-      ">Register</a>" +
+      registerCurrent + '><span data-i18n="nav_register">Register</span></a>' +
       "</nav>" +
       '<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">' +
       '<span class="nav-toggle__bars" aria-hidden="true"></span>' +
@@ -101,14 +106,14 @@
   }
 
   const FOOTER_LINKS = [
-    ["Home", "index.html"],
-    ["About", "about.html"],
-    ["The Event", "event.html"],
-    ["Locations", "event.html#locations"],
-    ["Challenges", "event.html#challenges"],
-    ["Registration", "register.html"],
-    ["FAQ", "help.html#faq"],
-    ["Contact", "help.html#contact"],
+    { key: "nav_home", label: "Home", href: "index.html" },
+    { key: "nav_about", label: "About", href: "about.html" },
+    { key: "nav_event", label: "The Event", href: "event.html" },
+    { key: "footer_locations", label: "Locations", href: "event.html#locations" },
+    { key: "footer_challenges", label: "Challenges", href: "event.html#challenges" },
+    { key: "footer_registration", label: "Registration", href: "register.html" },
+    { key: "footer_faq", label: "FAQ", href: "help.html#faq" },
+    { key: "footer_contact", label: "Contact", href: "help.html#contact" },
   ];
 
   function externalLink(label, href) {
@@ -123,7 +128,7 @@
     if (!host) return;
 
     const siteLinks = FOOTER_LINKS.map(function (l) {
-      return '<li><a href="' + l[1] + '">' + l[0] + "</a></li>";
+      return '<li><a href="' + l.href + '" data-i18n="' + l.key + '">' + l.label + "</a></li>";
     }).join("");
 
     host.innerHTML =
@@ -134,34 +139,34 @@
       '<img class="brand__mark" src="assets/icons/Space_Apps_logo_IRBID.jpg" alt="" width="36" height="36" loading="lazy">' +
       '<span class="brand__text"><strong>Space Apps Jordan</strong><span>Jordan site</span></span></a>' +
       '<p class="footer__title">NASA Space Apps Challenge<br>IRBID, Jordan 2026</p>' +
-      '<p class="footer__org"><span>Local organizer</span>Organized by <strong>MENA ORG</strong></p>' +
+      '<p class="footer__org"><span data-i18n="footer_local_organizer">Local organizer</span> <span data-i18n="footer_organized_by">Organized by</span> <strong>MENA ORG</strong></p>' +
       "</div>" +
       '<nav class="footer__col" aria-labelledby="footer-site">' +
-      '<h2 class="footer__heading" id="footer-site">Explore</h2>' +
+      '<h2 class="footer__heading" id="footer-site" data-i18n="footer_explore">Explore</h2>' +
       '<ul class="footer__list footer__list--two">' + siteLinks + "</ul></nav>" +
       '<nav class="footer__col" aria-labelledby="footer-official">' +
-      '<h2 class="footer__heading" id="footer-official">Official Space Apps</h2>' +
+      '<h2 class="footer__heading" id="footer-official" data-i18n="footer_official">Official Space Apps</h2>' +
       '<ul class="footer__list">' +
       "<li>" + externalLink("Global website", cfg.links.global) + "</li>" +
       "<li>" + externalLink("Participant terms", cfg.links.participantTerms) + "</li>" +
       "<li>" + externalLink("Resources", cfg.links.resources) + "</li>" +
       "</ul></nav>" +
       '<div class="footer__col">' +
-      '<h2 class="footer__heading" id="footer-contact">Contact</h2>' +
+      '<h2 class="footer__heading" id="footer-contact" data-i18n="footer_contact">Contact</h2>' +
       '<ul class="footer__list" aria-labelledby="footer-contact">' +
       '<li><a href="mailto:' + cfg.contact.email + '">' + cfg.contact.email + "</a></li>" +
       '<li><a href="' + cfg.contact.phoneHref + '">' + cfg.contact.phone + "</a></li>" +
       "</ul></div>" +
       "</div>" +
       '<div class="footer__bottom">' +
-      '<p class="footer__legal">Independent local-event website operated by MENA ORG. Registering here does not replace registration on the official platform at spaceappschallenge.org, which is required to take part.</p>' +
+      '<p class="footer__legal" data-i18n="footer_legal">Independent local-event website operated by MENA ORG. Registering here does not replace registration on the official platform at spaceappschallenge.org, which is required to take part.</p>' +
       '<div class="footer__meta">' +
       "<p>&copy; 2026 NASA Space Apps Challenge, IRBID</p>" +
       '<ul class="footer__legal-links">' +
       "<li>" + externalLink("Privacy", cfg.links.privacy) + "</li>" +
       "<li>" + externalLink("Terms", cfg.links.terms) + "</li>" +
       "</ul>" +
-      '<a class="footer__top" href="#top">Back to top</a>' +
+      '<a class="footer__top" href="#top" data-i18n="footer_back_top">Back to top</a>' +
       "</div></div></div>";
   }
 
