@@ -40,7 +40,7 @@
 
   const LABELS = {
     participation: {
-      "in-person": "In-Person: Madaba, Jordan",
+      "in-person": "In-Person: IRBID, Jordan",
       online: "Online: from anywhere in the world",
     },
     ageGroup: { adult: "18 or older", minor: "Under 18" },

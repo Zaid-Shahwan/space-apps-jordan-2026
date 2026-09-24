@@ -55,7 +55,6 @@
     members: document.getElementById("members-container"),
     membersIntro: document.getElementById("members-intro"),
     inPersonNote: document.getElementById("in-person-note"),
-    transportBlock: document.getElementById("transport-block"),
     shepherdBlock: document.getElementById("shepherd-block"),
     minorOnlineNote: document.getElementById("minor-online-note"),
     notesCount: document.getElementById("notes-count"),
@@ -90,7 +89,7 @@
   const LABELS = {
     ageGroup: { adult: "18 or older", minor: "Under 18" },
     participation: {
-      "in-person": "In person in Madaba, Jordan",
+      "in-person": "In person in IRBID, Jordan",
       online: "Online, from anywhere in the world",
     },
     skills: {
@@ -754,7 +753,6 @@
     const wasShepherdVisible = !ui.shepherdBlock.hidden;
 
     ui.inPersonNote.hidden = !inPerson;
-    ui.transportBlock.hidden = !inPerson;
     ui.shepherdBlock.hidden = !needsShepherd;
     ui.minorOnlineNote.hidden = !(V.anyMinor(state.data) && Boolean(part.type) && !inPerson);
 
@@ -833,9 +831,8 @@
     const partRows = [
       ["Participation", attendanceText(d)],
     ];
-    if (V.isInPerson(d)) partRows.push(["Transportation coverage", part.transport ? "Requested (limited, not guaranteed)" : "Not requested"]);
     if (V.needsShepherd(d)) {
-      partRows.push(["Adult shepherd", [part.shepherd.name || "Name missing", (part.shepherd.email || "Email missing") + "  |  " + (part.shepherd.phone || "Phone missing")]]);
+      partRows.push(["Parent/guardian contact", [part.shepherd.name || "Name missing", (part.shepherd.email || "Email missing") + "  |  " + (part.shepherd.phone || "Phone missing")]]);
       partRows.push(["Consent for under 18s", part.shepherd.consent ? "Will be provided" : "Not confirmed"]);
     }
     ui.review.appendChild(reviewSection("Participation and location", 4, partRows));
@@ -891,7 +888,7 @@
     state.submissionToken = null;
     const team = result.team;
     ui.successText.textContent =
-      "Your team has been successfully registered for NASA Space Apps Challenge Madaba 2026. " +
+      "Your team has been successfully registered for NASA Space Apps Challenge IRBID 2026. " +
       "We will use the email address you provided if we need to reach your team.";
     ui.successRef.textContent = formatTeamId(team.id);
     ui.successTeam.textContent = team.teamName;

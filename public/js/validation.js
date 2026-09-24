@@ -9,7 +9,7 @@
      team:          { name, size, officialConfirm },
      leader:        { name, email, phone, ageGroup, organization },
      members:       [ { name, email, ageGroup } ],      // excludes the leader
-     participation: { type, transport,          // type: "in-person" (Madaba) | "online"
+     participation: { type, transport,          // type: "in-person" (IRBID) | "online"
                       shepherd: { name, email, phone, consent } },
      extra:         { skills[], heardFrom, notes, agreeAccurate, agreeContact }
    }
@@ -95,7 +95,7 @@
     });
   }
 
-  /** Participation type: "in-person" (Madaba, Jordan) or "online" (from anywhere in the world). */
+  /** Participation type: "in-person" (IRBID, Jordan) or "online" (from anywhere in the world). */
   function participationType(data) {
     const type = data.participation.type;
     return type === "in-person" || type === "online" ? type : "";
@@ -105,9 +105,9 @@
     return participationType(data) === "in-person";
   }
 
-  /** A registered adult shepherd is required when a minor attends in person. */
+  /** A parent/guardian contact is required whenever any team member is under 18. */
   function needsShepherd(data) {
-    return isInPerson(data) && anyMinor(data);
+    return anyMinor(data);
   }
 
   function teamEmails(data) {

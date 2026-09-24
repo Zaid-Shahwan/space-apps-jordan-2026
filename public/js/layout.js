@@ -84,7 +84,7 @@
       '<div class="site-header__inner container">' +
       '<a class="brand" href="index.html" aria-label="Space Apps Jordan 2026, home">' +
       '<img class="brand__mark" src="assets/icons/Space_Apps_logo_IRBID.jpg" alt="" width="36" height="36">' +
-      '<span class="brand__text"><strong>Space Apps Jordan</strong><span>Madaba, Jordan 2026</span></span>' +
+      '<span class="brand__text"><strong>Space Apps Jordan</strong><span>IRBID, Jordan 2026</span></span>' +
       "</a>" +
       '<nav class="site-nav" id="site-nav" aria-label="Primary">' +
       '<ul class="site-nav__list">' +
@@ -133,7 +133,7 @@
       '<a class="brand" href="index.html" aria-label="Space Apps Jordan 2026, home">' +
       '<img class="brand__mark" src="assets/icons/Space_Apps_logo_IRBID.jpg" alt="" width="36" height="36" loading="lazy">' +
       '<span class="brand__text"><strong>Space Apps Jordan</strong><span>Jordan site</span></span></a>' +
-      '<p class="footer__title">NASA Space Apps Challenge<br>Madaba, Jordan 2026</p>' +
+      '<p class="footer__title">NASA Space Apps Challenge<br>IRBID, Jordan 2026</p>' +
       '<p class="footer__org"><span>Local organizer</span>Organized by <strong>MENA ORG</strong></p>' +
       "</div>" +
       '<nav class="footer__col" aria-labelledby="footer-site">' +
@@ -156,7 +156,7 @@
       '<div class="footer__bottom">' +
       '<p class="footer__legal">Independent local-event website operated by MENA ORG. Registering here does not replace registration on the official platform at spaceappschallenge.org, which is required to take part.</p>' +
       '<div class="footer__meta">' +
-      "<p>&copy; 2026 NASA Space Apps Challenge, Madaba</p>" +
+      "<p>&copy; 2026 NASA Space Apps Challenge, IRBID</p>" +
       '<ul class="footer__legal-links">' +
       "<li>" + externalLink("Privacy", cfg.links.privacy) + "</li>" +
       "<li>" + externalLink("Terms", cfg.links.terms) + "</li>" +

@@ -11,7 +11,7 @@
 
   SA.config = {
     siteName: "NASA Space Apps Challenge",
-    editionLabel: "Madaba 2026",
+    editionLabel: "IRBID 2026",
 
     /* Event window. Jordan is UTC+3 all year. Adjust once the start time is announced. */
     eventStart: "2026-11-13T00:00:00+03:00",
